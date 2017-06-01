@@ -1,31 +1,57 @@
 package com.onlinecalculator.calculator.maincalc;
 
+import com.onlinecalculator.calculator.calctypes.BasicCalc;
+import com.onlinecalculator.calculator.calctypes. StatisticCalc;
+import com.onlinecalculator.calculator.calctypes.ScientificCalc;
 import java.util.Scanner;
-
-import com.onlinecalculator.calculator.calctypes.*;
-
 public class MainPgm {
 public static void main(String args[]){
-        char type;
+        int type;
         type=getType();
-        if(type=='a')
+        if(type==1)
         {
+        	BasicCalc c=new BasicCalc();
         	
+    		c.menu();
+    			   
+    	   c.userInputs();
+    	    c.performOperation();
+    	   
         }
-        if(type=='b')
+        if(type==2)
         {
-       		
+        	ScientificCalc c=new ScientificCalc();
+        	
+    		c.menu();
+    			   
+    	   c.userInputs();
+    	   c.performOperation();
+    	   
        	}
         	
-        	if(type=='c')
+        	if(type==3)
         	{
+        		 StatisticCalc s=new  StatisticCalc();
+        		s.menu();
+        		
+        		s.userInputs();
+        		s.performOperation();
+        	}
         		
         	}
  
-    }
+    
         
-    static char getType()
-    {
+    static int getType()
+    {   
+    	System.out.println("*******menu*******");
+    	System.out.println("1.basic calculator");
+    	System.out.println("2.scientific calculator");
+    	System.out.println("3.statistic calculator");
+    	System.out.println("***************************");
+    	System.out.println("enter your choice");
+    	Scanner sc=new Scanner(System.in);
+    	return (sc.nextInt());
     	
     }
 }
